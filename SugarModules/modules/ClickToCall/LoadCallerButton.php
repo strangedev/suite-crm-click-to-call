@@ -10,7 +10,7 @@ class LoadCallerButton
     function loadCallerButton()
     {
 
-        if ($this->isValidLoadButtom())
+        if ($this->isValidLoadButton())
         {
 
             $extension = $GLOBALS['current_user']->phone_extension_c;
@@ -23,7 +23,7 @@ class LoadCallerButton
         }
     }
 
-    public function isValidLoadButtom()
+    public function isValidLoadButton()
     {
 
         $noActions = array(

@@ -1,38 +1,18 @@
 
 var phones = $('[type=phone]');
-var baseUrl = window.siteUrl;
 
-for (i = 0; i < phones.length; i++) {
+for (var i = 0; i < phones.length; i++) {
 
     var phone = $(phones[i]);
     var callerButton = $(phone).attr('caller-button');
 
     if (callerButton === undefined) {
 
-        var number = phone.text().trim();
+        var number = phone.text().trim().replace(" ", "");
 
-        phone.append('<img src="' + baseUrl + '/themes/SuiteP/images/Calls.svg" alt="to call" class="click-to-call" data-number="' + number + '" />');
+        phone.append('<a href="tel://'+ number +'"><img src="/themes/SuiteP/images/Calls.svg" alt="click-to-call" class="click-to-call"/></a>');
         $(phone).attr('caller-button', true);
 
     }
 
 }
-
-$('img.click-to-call:not(.binded)').addClass('binded').on('click', function() {
-
-    var number = $(this).attr('data-number');
-
-    $.ajax({
-        type: "POST",
-        url: baseUrl + '/index.php?entryPoint=clickToCall',
-        data: {
-            ext: window.extension,
-            num: number
-        },
-        success: function (e) {
-            console.warn(e);
-        }
-    });
-
-});
-

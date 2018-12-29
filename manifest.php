@@ -19,12 +19,12 @@ $manifest = array(
     ),
     'readme' => '',
     'key' => '',
-    'author' => ' ',
-    'description' => 'SuiteCRM Click to Call (Asterisk)',
+    'author' => '',
+    'description' => 'SuiteCRM Click to Call, using the tel:// protocol',
     'icon' => '',
     'is_uninstallable' => true,
-    'name' => 'SuiteCRM Click to Call (Asterisk)',
-    'published_date' => 'January 8, 2018',
+    'name' => 'SuiteCRM Click to Call',
+    'published_date' => 'December 29, 2018',
     'type' => 'module',
     'version' => 'v0.0.1',
     'remove_tables' => false
@@ -34,42 +34,13 @@ $installdefs = array(
     'id' => 'ClickToCall',
     'copy' => array(
         0 => array(
-            'from' => '<basepath>/SugarModules/Extension/modules/Administration/Ext/',
-            'to' => 'custom/Extension/modules/Administration/Ext'
-        ),
-        1 => array(
-            'from' => '<basepath>/SugarModules/Extension/modules/Users/Ext/Language',
-            'to' => 'custom/Extension/modules/Users/Ext/Language'
-        ),
-        2 => array(
             'from' => '<basepath>/SugarModules/modules/ClickToCall',
             'to' => 'modules/ClickToCall'
-        ),
-        3 => array(
-            'from' => '<basepath>/SugarModules/EntryPoint/clickToCall.php',
-            'to' => 'custom/Extension/application/Ext/EntryPointRegistry/clickToCall.php'
         )
     ),
     'mkdir' => array(),
     'administration' => array(),
-    'custom_fields' => array(
-        array(
-            'id' => 'extension_id',
-            'name' => 'phone_extension_c',
-            'label' => 'LBL_CLICKTOCALL_PHONE_EXTENSION',
-            'type' => 'varchar',
-            'module' => 'Users',
-            'help' => 'Enter Your Extension',
-            'comment' => '',
-            'default_value' => '',
-            'max_size' => 10,
-            'required' => false,
-            'reportable' => false,
-            'audited' => false,
-            'importable' => true,
-            'duplicate_merge' => false
-        )
-    ),
+    'custom_fields' => array(),
     'logic_hooks' => array(
         array(
             'module' => '',
